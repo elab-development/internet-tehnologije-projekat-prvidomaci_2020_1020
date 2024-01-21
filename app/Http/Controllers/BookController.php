@@ -80,9 +80,9 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy($book_id)
     {
-        $book->delete();
+        $book = Book::where('id', $book_id) ->delete();
         return response()->json('Book removed successfully');
     }
 }

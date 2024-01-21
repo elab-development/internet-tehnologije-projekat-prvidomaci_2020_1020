@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function(Request $request) {
         return auth()->user();
     });
+
     Route::resource('/books', BookController::class)->only(['update','store','destroy']);
 
     // API route for logout user
